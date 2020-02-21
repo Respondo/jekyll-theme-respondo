@@ -1,10 +1,11 @@
 ---
-layout: default
+layout: page
+title: Index
 ---
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-[Link to another page](./another-page.html).
+[Link to another page](./another_page.html).
 
 There should be whitespace between paragraphs.
 

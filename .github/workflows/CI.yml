@@ -13,20 +13,3 @@ jobs:
           gem install rubocop -v '0.80.0'
       - name: Run rubocop
         run: rubocop
-  htmlproofer:
-    runs-on: ubuntu-latest
-    container: ruby:2.7.0
-    steps:
-      - uses: actions/checkout@v1
-      - name: Install bundler
-        run: |
-          gem install bundler
-      - name: Install dependencies
-        run: |
-          bundle install
-      - name: Build site
-        run: |
-          bundle exec jekyll build
-      - name: Run html-proofer
-        run: |
-          bundle exec htmlproofer ./_site --check-html --check-sri
