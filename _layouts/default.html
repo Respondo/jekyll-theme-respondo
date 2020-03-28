@@ -36,15 +36,19 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="https://respondohub.com">What is Respondo?</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" target="_blank" rel="noopener noreferrer" href="https://app.respondohub.com">Start using Respondo!</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" target="_blank" rel="noopener noreferrer" href="https://docs.respondohub.com">Documentation!</a>
-          </li>
+          {% for site_page in site.pages %}
+            <li class="nav-item {% if site_page.url == page.url %}active{% endif %}">
+              {% capture page_url %}
+                {% if site_page.url contains '.html' %}
+                  {% assign url_size = site_page.url | size | minus: 5 %}
+                  {{ site_page.url | slice: 0, url_size }}
+                {% else %}
+                  {{ site_page.url }}
+                {% endif %}
+              {% endcapture %}
+              <a class="nav-link" href="{{ page_url | strip }}">{{ site_page.title }}</a>
+            </li>
+          {% endfor %}
         </ul>
       </div>
     </div>
