@@ -22,6 +22,20 @@ Or install it yourself as:
 
     $ gem install jekyll-theme-respondo
 
+## Usage
+
+### Navigation Bar
+
+#### Ignoring Pages
+
+To leave a page out of the navigation bar add `ignore: true` to the page front
+matter.
+
+#### Ordering Pages
+
+To order pages in the navigation bar add `order: N` to the pages front matter.
+N denotes the order in which the pages should appear in the navigation bar.
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/matteeyah/jekyll-theme-respondo. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.

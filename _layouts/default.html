@@ -36,18 +36,21 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          {% for site_page in site.pages %}
-            <li class="nav-item {% if site_page.url == page.url %}active{% endif %}">
-              {% capture page_url %}
-                {% if site_page.url contains '.html' %}
-                  {% assign url_size = site_page.url | size | minus: 5 %}
-                  {{ site_page.url | slice: 0, url_size }}
-                {% else %}
-                  {{ site_page.url }}
-                {% endif %}
-              {% endcapture %}
-              <a class="nav-link" href="{{ page_url | strip }}">{{ site_page.title }}</a>
-            </li>
+          {% assign sorted_pages = site.pages | sort: "order" %}
+          {% for site_page in sorted_pages %}
+            {% unless site_page.ignore == true %}
+              <li class="nav-item {% if site_page.url == page.url %}active{% endif %}">
+                {% capture page_url %}
+                  {% if site_page.url contains '.html' %}
+                    {% assign url_size = site_page.url | size | minus: 5 %}
+                    {{ site_page.url | slice: 0, url_size }}
+                  {% else %}
+                    {{ site_page.url }}
+                  {% endif %}
+                {% endcapture %}
+                <a class="nav-link" href="{{ page_url | strip }}">{{ site_page.title }}</a>
+              </li>
+            {% endunless %}
           {% endfor %}
         </ul>
       </div>
