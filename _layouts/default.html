@@ -30,10 +30,10 @@
       <img src="assets/img/logo_white_160x160.png" alt="Respondo logo" class="mr-2" />
       <span>Respondo</span>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
+    <div class="collapse navbar-collapse" id="navbar-content">
       <ul class="navbar-nav ml-auto">
         {% assign sorted_pages = site.pages | sort: "order" %}
         {% for site_page in sorted_pages %}
