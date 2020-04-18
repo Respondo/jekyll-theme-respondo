@@ -25,50 +25,66 @@
 <body id="page-top">
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#page-top">
-      <img src="assets/img/logo_white_160x160.png" alt="Respondo logo" class="mr-2" />
-      <span>Respondo</span>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbar-content">
-      <ul class="navbar-nav ml-auto">
-        {% assign sorted_pages = site.pages | sort: "order" %}
-        {% for site_page in sorted_pages %}
-          {% unless site_page.ignore == true %}
-            <li class="nav-item {% if site_page.url == page.url %}active{% endif %}">
-              {% capture page_url %}
-                {% if site_page.url contains '.html' %}
-                  {% assign url_size = site_page.url | size | minus: 5 %}
-                  {{ site_page.url | slice: 0, url_size }}
-                {% else %}
-                  {{ site_page.url }}
-                {% endif %}
-              {% endcapture %}
-              <a class="nav-link" href="{{ page_url | strip }}">{{ site_page.title }}</a>
-            </li>
-          {% endunless %}
-        {% endfor %}
-      </ul>
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#page-top">
+        <span class="font-weight-bold text-white">Respondo</span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa fa-bars fa-lg text-white"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar-content">
+        <ul class="navbar-nav ml-auto">
+          {% assign sorted_pages = site.pages | sort: "order" %}
+          {% for site_page in sorted_pages %}
+            {% unless site_page.ignore == true %}
+              <li class="nav-item {% if site_page.url == page.url %}active{% endif %}">
+                {% capture page_url %}
+                  {% if site_page.url contains '.html' %}
+                    {% assign url_size = site_page.url | size | minus: 5 %}
+                    {{ site_page.url | slice: 0, url_size }}
+                  {% else %}
+                    {{ site_page.url }}
+                  {% endif %}
+                {% endcapture %}
+                <a class="nav-link text-white" href="{{ page_url | strip }}">{{ site_page.title }}</a>
+              </li>
+            {% endunless %}
+          {% endfor %}
+        </ul>
+      </div>
     </div>
   </nav>
 
-  <header class="bg-primary text-white">
-    <div class="container text-center">
-      <img src="assets/img/logo_white_160x160.png" alt="Respondo logo" />
-      <h1>Respondo</h1>
-      <p class="lead">Featherweight Zendesk for Twitter, Disqus and more</p>
+  <header class="bg-primary text-white pb-0">
+    <div class="container pb-5">
+      <div class="row">
+        <div class="col-lg-4 mb-5 mb-lg-0 text-center">
+          <img src="assets/img/logo_circle_white.svg" alt="Respondo logo" class="img-fluid" />
+        </div>
+        <div class="col-lg-7">
+          <h1 class="mt-0">Respondo</h1>
+          <p class="lead">Respondo is a ticketing system for social media posts. In functionality it resembles Zendesk. You can classify, search and filter tickets. It's primary purpose is to ease and formalize the handling of social media posts for brand accounts.</p>
+          <a class="btn btn-lg btn-success rounded-pill" href="https://app.respondohub.com" target="_blank" rel="noopener noreferrer">Start Respondo!</a>
+        </div>
+      </div>
     </div>
+
+    <img src="assets/img/wave_header.svg" class="w-100 h-auto">
   </header>
 
   {{ content }}
 
   <!-- Footer -->
-  <footer class="py-5 bg-dark">
+  <footer>
+    <img src="assets/img/wave_footer.svg" class="w-100 h-auto">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Respondo Ltd 2020</p>
+      <div class="row justify-content-center mb-3">
+        <img src="assets/img/logo_circle_white.svg">
+      </div>
+      <div class="row justify-content-center">
+        <p class="text-center text-white h5">Copyright &copy; Respondo Ltd 2020</p>
+      </div>
     </div>
     <!-- /.container -->
   </footer>
