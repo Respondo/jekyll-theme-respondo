@@ -4,6 +4,11 @@ layout: default
 
 <main role="main">
   <div class="container py-5">
+    <nav>
+      <h2>On This Page</h2>
+      {% include toc.html html=content %}
+    </nav>
+
     {{ content }}
   </div>
 </main>
