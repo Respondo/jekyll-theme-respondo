@@ -3,29 +3,3 @@ ignore: true
 ---
 
 @import 'jekyll-theme-respondo';
-
-header, footer, .navbar{
-  background: linear-gradient(90deg, rgba(21,127,251,1) 0%, rgba(17,93,181,1) 100%);
-}
-
-.navbar-brand span {
-  font-size: 1.75rem;
-}
-
-.nav-item {
-  font-size: 1.25rem;
-}
-
-.nav-item.active {
-  font-weight: bold;
-}
-
-header img {
-  width: 10rem;
-  height: 10rem;
-}
-
-footer img {
-  width: 6rem;
-  height: 6rem;
-}

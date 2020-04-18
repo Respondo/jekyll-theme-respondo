@@ -1,15 +1,29 @@
-@import "normalize";
-
 html {
   scroll-behavior: smooth;
 }
 
-header {
-  padding: 156px 0 100px;
+header, footer, .navbar{
+  background: linear-gradient(90deg, rgba(21,127,251,1) 0%, rgba(17,93,181,1) 100%);
 }
 
-.navbar-brand img {
-  width: 2em;
-  height: 2em;
-  margin-right: 0.5em;
+.navbar-brand span {
+  font-size: 1.75rem;
+}
+
+.nav-item {
+  font-size: 1.25rem;
+}
+
+.nav-item.active {
+  font-weight: bold;
+}
+
+header img {
+  width: 10rem;
+  height: 10rem;
+}
+
+footer img {
+  width: 6rem;
+  height: 6rem;
 }
