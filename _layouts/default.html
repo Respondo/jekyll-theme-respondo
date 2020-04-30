@@ -35,9 +35,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbar-content">
         <ul class="navbar-nav ml-auto">
-          {% assign sorted_pages = site.pages | sort: "order" %}
+          {% assign sorted_pages = site.pages | sort: "nav_order" %}
           {% for site_page in sorted_pages %}
-            {% unless site_page.ignore == true %}
+            {% unless site_page.nav_skip == true %}
               <li class="nav-item {% if site_page.url == page.url %}active{% endif %}">
                 {% capture page_url %}
                   {% if site_page.url contains '.html' %}

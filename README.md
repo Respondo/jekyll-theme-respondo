@@ -26,14 +26,14 @@ Or install it yourself as:
 
 ### Navigation Bar
 
-#### Ignoring Pages
+#### Excluding
 
-To leave a page out of the navigation bar add `ignore: true` to the page front
+To leave a page out of the navigation bar add `nav_skip: true` to the page front
 matter.
 
-#### Ordering Pages
+#### Ordering
 
-To order pages in the navigation bar add `order: N` to the pages front matter.
+To order pages in the navigation bar add `nav_order: N` to the pages front matter.
 N denotes the order in which the pages should appear in the navigation bar.
 
 ## Contributing
