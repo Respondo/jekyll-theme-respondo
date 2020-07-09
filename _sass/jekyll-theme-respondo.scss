@@ -18,6 +18,11 @@ header, footer, .navbar{
   background: linear-gradient(90deg, rgba(21,127,251,1) 0%, rgba(17,93,181,1) 100%);
 }
 
+header > .container {
+  padding-top: 10rem!important;
+  padding-bottom: 8rem!important;
+}
+
 .navbar-brand span {
   font-size: 1.75rem;
 }
