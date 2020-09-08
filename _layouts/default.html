@@ -74,8 +74,14 @@
           <img src="assets/img/logo_circle_white.svg" alt="Respondo logo" class="img-fluid" />
         </div>
         <div class="col-lg-7">
-          <h1 class="mt-0">What is Respondo?</h1>
-          <p class="lead">Respondo is a ticketing system for social media posts. It's like Zendesk for Twitter. It simplifies and enables supporting users via social networks.</p>
+          <h1 class="mt-0">{{ page.title }}</h1>
+          <p class="lead">
+            {% if page.description %}
+              {{ page.description }}
+            {% else %}
+              Respondo is a ticketing system for social media posts. It's like Zendesk for Twitter. It simplifies and enables supporting users via social networks.
+            {% endif %}
+          </p>
           <a class="btn btn-lg btn-success rounded-pill" href="https://app.respondohub.com" target="_blank" rel="noopener noreferrer">Use Respondo!</a>
           <a class="btn btn-lg btn-light rounded-pill ml-2" href="https://respondohub.com#explainer" target="_blank" rel="noopener noreferrer">See Explainer</a>
         </div>
