@@ -24,6 +24,10 @@ Or install it yourself as:
 
 ## Usage
 
+### Configuration
+
+* Title - The site title can be configured via `_config.yml`
+
 ### Navigation Bar
 
 #### Excluding
