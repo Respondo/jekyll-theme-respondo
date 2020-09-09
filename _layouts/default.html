@@ -83,7 +83,18 @@
             {% endif %}
           </p>
           <a class="btn btn-lg btn-success rounded-pill" href="https://app.respondohub.com" target="_blank" rel="noopener noreferrer">Use Respondo!</a>
-          <a class="btn btn-lg btn-light rounded-pill ml-2" href="https://respondohub.com#explainer" target="_blank" rel="noopener noreferrer">See Explainer</a>
+          {% if page.cta_button %}
+            {% assign cta_button_url = page.cta_button.url %}
+          {% else %}
+            {% assign cta_button_url = "https://respondohub.com#explainer" %}
+          {% endif %}
+          <a class="btn btn-lg btn-light rounded-pill ml-2" href="{{ cta_button_url }}">
+            {% if page.cta_button %}
+              {{ page.cta_button.title }}
+            {% else %}
+              See Explainer
+            {% endif %}
+          </a>
         </div>
       </div>
     </div>
