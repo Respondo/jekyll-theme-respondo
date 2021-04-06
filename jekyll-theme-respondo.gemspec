@@ -14,10 +14,10 @@ Gem::Specification.new do |spec|
     f.match(/^(assets|_layouts|_includes|_sass|LICENSE|README)/i)
   end
 
-  spec.add_runtime_dependency 'jekyll', '4.1.1'
+  spec.add_runtime_dependency 'jekyll', '4.2.0'
 
   spec.add_development_dependency 'bundler', '2.1.4'
   spec.add_development_dependency 'html-proofer', '~> 3.0'
   spec.add_development_dependency 'rake', '~> 13.0.1'
-  spec.add_development_dependency 'rubocop', '~> 0.74'
+  spec.add_development_dependency 'rubocop', '~> 1.12.0'
 end
